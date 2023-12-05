@@ -46,7 +46,7 @@ Bu projenin amacı, bir barın içeriğini etkili bir şekilde yönetmek ve fiya
 1. Projeyi başlatın.
 
    ```bash
-   npm start
+   npm run serverstart
    ```
 
 2. Tarayıcıda `http://localhost:3000` adresine gidin.
@@ -55,14 +55,18 @@ Bu projenin amacı, bir barın içeriğini etkili bir şekilde yönetmek ve fiya
 
 ## Ekran Görüntüleri
 
-![Ana Ekran](screenshots/home.png)
-![Masa Hesapları](screenshots/table-bills.png)
-![Garson Siparişleri](screenshots/waiter-orders.png)
+![image](https://github.com/ferhatkplnn/bar-menu-uygulamasi/assets/29931637/5e36e88f-6eda-4914-8286-88d181a9018f)
+
+![image](https://github.com/ferhatkplnn/bar-menu-uygulamasi/assets/29931637/d31630fc-6a4c-45e8-a244-0c04df690b0e)
+
+![image](https://github.com/ferhatkplnn/bar-menu-uygulamasi/assets/29931637/e2c9dbc7-9057-4d96-b6c2-a59357495d24)
+
+![image](https://github.com/ferhatkplnn/bar-menu-uygulamasi/assets/29931637/cc534d9e-382d-484a-a022-c229c276ab1a)
 
 ## Katılıma Nasıl Katkıda Bulunulur
 
 1. [CONTRIBUTING.md](CONTRIBUTING.md) dosyasını okuyun.
-2. Fork yapın (https://github.com/[kullanıcı adınız]/bar-menu-app/fork)
+2. Fork yapın (https://github.com/ferhatkplnn/bar-menu-app/fork)
 3. Özellik dalınızı oluşturun (`git checkout -b özellik/yeni-özellik`)
 4. Değişikliklerinizi commit edin (`git commit -am 'Yeni özellik: Açıklama'`)
 5. Dalınıza itme yapın (`git push origin özellik/yeni-özellik`)
