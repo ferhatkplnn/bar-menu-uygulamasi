@@ -63,6 +63,9 @@ Bu projenin amacı, bir barın içeriğini etkili bir şekilde yönetmek ve fiya
 
 ![image](https://github.com/ferhatkplnn/bar-menu-uygulamasi/assets/29931637/cc534d9e-382d-484a-a022-c229c276ab1a)
 
+![image](https://github.com/ferhatkplnn/bar-menu-uygulamasi/assets/29931637/f355d929-dc0a-4dc7-89b4-b92f2c9b1c80)
+
+
 ## Katılıma Nasıl Katkıda Bulunulur
 
 1. [CONTRIBUTING.md](CONTRIBUTING.md) dosyasını okuyun.
