@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Masa ve Ürün Listesi</title>
+        <link rel="stylesheet" href="bootstrap.min.css" />
+    </head>
+    <body>
+        <div class="container mt-2">
+            <a class="btn btn-primary" href="./products.html">Sipariş Ver</a>
+        </div>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-header">Masalar</div>
+                        <ul
+                            class="list-group list-group-flush"
+                            id="masa-listesi"
+                        >
+                            <!-- Masa listesi burada oluşturulacak -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <span id="masa-adi">Masa Adı</span>
+                        </div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Ürün Adı</th>
+                                        <th>Miktar</th>
+                                        <th>Fiyat</th>
+                                        <th>Zaman</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="urun-listesi">
+                                    <!-- Ürün listesi burada oluşturulacak -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer">
+                            <strong>Toplam Tutar:</strong>
+                            <span id="toplam-tutar"></span>
+                        </div>
+                        <div class="card-footer">
+                            <strong>Odenmemis Toplam Tutar:</strong>
+                            <span id="odenmemis-toplam-tutar"></span>
+                        </div>
+                        <div
+                            class="btn-group"
+                            role="group"
+                            aria-label="Basic outlined example"
+                        >
+                            <button
+                                class="btn btn btn-outline-primary"
+                                id="siparis-gonder"
+                            >
+                                Adisyon gonder
+                            </button>
+
+                            <button
+                                type="button"
+                                class="btn btn-outline-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop"
+                            >
+                                Masa aktarma
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div
+            class="modal fade"
+            id="staticBackdrop"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="staticBackdropLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">
+                            Aktarilacak masayi secin
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                            onclick="location.reload()"
+                        ></button>
+                    </div>
+                    <div class="modal-body" id="modelId">
+                        <div class="card" id="desklist">
+                            <div class="card-header">Masalar</div>
+                            <ul
+                                class="list-group list-group-flush"
+                                id="masa-aktarim-listesi"
+                            ></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <button class="btn btn-primary" id="siparis-gonder">
+            Adisyon Gönder
+        </button> -->
+
+        <script src="bootstrap.min.js"></script>
+
+        <script>
+            // Masaların listesini oluştur
+            const masaListesi = document.getElementById("masa-listesi");
+            const masaAdiElement = document.getElementById("masa-adi");
+            const toplamTutarElement = document.getElementById("toplam-tutar");
+            const odenmemisToplamTutarElement = document.getElementById(
+                "odenmemis-toplam-tutar"
+            );
+
+            document
+                .getElementById("siparis-gonder")
+                .addEventListener("click", () => {
+                    if (!confirm("Adisyon alinsin mi?")) {
+                        return;
+                    }
+                    const masaAdi = masaAdiElement.textContent;
+                    const urunListesi = [];
+
+                    // Get the selected table's product list
+                    const urunRows =
+                        document.querySelectorAll("#urun-listesi tr");
+                    urunRows.forEach((row) => {
+                        const urunAdi =
+                            row.querySelector("td:nth-child(1)").textContent;
+                        const miktar = parseInt(
+                            row.querySelector("td:nth-child(2)").textContent
+                        );
+                        const fiyat = parseFloat(
+                            row.querySelector("td:nth-child(3)").textContent
+                        );
+                        urunListesi.push({
+                            name: urunAdi,
+                            quantity: miktar,
+                            price: fiyat,
+                        });
+                    });
+
+                    const apiUrl = `http://${window.location.host}/postadisyon`;
+
+                    // Send the product list as a POST request
+                    fetch(apiUrl, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({ masaAdi, urunListesi }),
+                    })
+                        .then((response) => {
+                            // Handle the response if needed
+                            setTimeout(function () {
+                                location.reload();
+                            }, 300);
+                        })
+                        .catch((error) => {
+                            console.error(
+                                "Error while sending the product list:",
+                                error
+                            );
+                        });
+                });
+
+            let secilenMasaAdi = null;
+            fetch("masalar.json")
+                .then((response) => response.json())
+                .then((masalar) => {
+                    // console.log(masalar);
+                    Object.keys(masalar).forEach((masa) => {
+                        const li = document.createElement("li");
+
+                        function kontrolEtIsClosedFalse(liste) {
+                            return liste.some(function (nesne) {
+                                return nesne.isClosed === false;
+                            });
+                        }
+                        // console.log(!kontrolEtIsClosedFalse(masalar[masa]));
+                        if (!kontrolEtIsClosedFalse(masalar[masa])) {
+                            li.classList.add("bg-success");
+                            // li.classList.add("bg-success");
+                        }
+                        li.classList.add("list-group-item");
+                        li.textContent = masa === "" ? "Boş Masa" : masa;
+                        li.addEventListener("click", (e) => {
+                            secilenMasaAdi = e.target.innerHTML;
+
+                            const liElements = document.querySelectorAll(
+                                "#masa-aktarim-listesi li"
+                            );
+                            for (const li of liElements) {
+                                li.style.display = "block";
+                                if (li.textContent === secilenMasaAdi) {
+                                    li.style.display = "none";
+                                    // break; // İsmi "a2" olan ilk öğeyi gizledikten sonra döngüyü sonlandırıyoruz.
+                                }
+                            }
+                            // console.log(secilenMasaAdi);
+                            // Tıklanan masanın ürün listesini oluştur ve göster
+                            const urunListesi =
+                                document.getElementById("urun-listesi");
+                            urunListesi.innerHTML = ""; // Önce mevcut listeyi temizle
+
+                            // Seçilen masayı vurgula ve adını güncelle
+                            const masaItems =
+                                document.querySelectorAll("#masa-listesi li");
+                            masaItems.forEach((item) =>
+                                item.classList.remove("active")
+                            );
+                            li.classList.add("active");
+                            masaAdiElement.textContent =
+                                masa === "" ? "Boş Masa" : masa;
+
+                            let toplamTutar = 0;
+                            let odenmemisToplamTutar = 0;
+
+                            if (masalar[masa]) {
+                                masalar[masa].forEach((urun) => {
+                                    const tr = document.createElement("tr");
+                                    const tdUrunAdi =
+                                        document.createElement("td");
+                                    const tdMiktar =
+                                        document.createElement("td");
+                                    const tdFiyat =
+                                        document.createElement("td");
+                                    const tdZaman =
+                                        document.createElement("td");
+
+                                    if (urun.isClosed === true) {
+                                        tdUrunAdi.classList.add("bg-success");
+                                        tdMiktar.classList.add("bg-success");
+                                        tdFiyat.classList.add("bg-success");
+                                        tdZaman.classList.add("bg-success");
+                                    }
+                                    tdUrunAdi.textContent = urun.name;
+                                    tdMiktar.textContent = urun.quantity;
+                                    tdZaman.textContent = formatDate(urun.date);
+                                    const fiyatDeger = parseFloat(urun.price);
+                                    const toplamFiyat =
+                                        fiyatDeger * urun.quantity;
+                                    tdFiyat.textContent =
+                                        toplamFiyat.toFixed(2) + " TL";
+
+                                    tr.appendChild(tdUrunAdi);
+                                    tr.appendChild(tdMiktar);
+                                    tr.appendChild(tdFiyat);
+                                    tr.appendChild(tdZaman);
+
+                                    urunListesi.appendChild(tr);
+
+                                    // Ürün tutarını toplam tutara ekle
+                                    toplamTutar += toplamFiyat;
+
+                                    if (urun.isClosed === false) {
+                                        odenmemisToplamTutar += toplamFiyat;
+                                    }
+                                });
+                            }
+
+                            // Toplam tutarı göster
+                            toplamTutarElement.textContent =
+                                toplamTutar.toFixed(2) + " TL";
+                            odenmemisToplamTutarElement.textContent =
+                                odenmemisToplamTutar.toFixed(2) + " TL";
+                        });
+                        masaListesi.appendChild(li);
+                    });
+                })
+                .catch((error) =>
+                    console.error("Veri çekilirken hata oluştu:", error)
+                );
+            let aktarilacakMasaAdi = null;
+            function formatDate(timestamp) {
+                const date = new Date(timestamp);
+
+                const year = date.getFullYear();
+                const month = String(date.getMonth() + 1).padStart(2, "0"); // Ay indeksi 0'dan başlar, bu yüzden +1 ekliyoruz.
+                const day = String(date.getDate()).padStart(2, "0");
+                const hours = String(date.getHours()).padStart(2, "0");
+                const minutes = String(date.getMinutes()).padStart(2, "0");
+                const seconds = String(date.getSeconds()).padStart(2, "0");
+
+                const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+                return formattedDate;
+            }
+
+            /// masa aktarimi ///
+            const masaListesiModal = document.getElementById(
+                "masa-aktarim-listesi"
+            );
+            const deskListDom = document.getElementById("desklist");
+            fetch("masalar.json")
+                .then((response) => response.json())
+                .then((masalar) => {
+                    // console.log(masalar);
+                    Object.keys(masalar).forEach((masa) => {
+                        const li = document.createElement("li");
+
+                        if (masa === secilenMasaAdi) {
+                            return;
+                        }
+
+                        li.classList.add("list-group-item");
+                        li.textContent = masa === "" ? "Boş Masa" : masa;
+                        li.addEventListener("click", (e) => {
+                            aktarilacakMasaAdi = e.target.innerHTML;
+
+                            const secilenMasa = masalar[secilenMasaAdi];
+                            // console.log(aktarilacakMasaAdi);
+
+                            deskListDom.remove();
+
+                            const productDiv =
+                                document.getElementById("modelId");
+
+                            // Ürün listesi için gerekli HTML içeriği
+                            const productListHTML = `
+    <h2>Ürün Listesi</h2>
+    <form id="productForm">
+        <ul id="productList"></ul>
+        <button type="button" onclick="getSelectedProducts()">
+            Seçili Ürünleri Gönder
+        </button>
+    </form>
+`;
+
+                            const products = secilenMasa;
+                            // Ürün listesi içeriğini "product" ID'li <div> içine ekleyelim.
+                            productDiv.innerHTML = productListHTML;
+
+                            // Ürün listesi verisini kullanarak checkboxları dinamik olarak oluşturuyoruz.
+                            const productListElement =
+                                document.getElementById("productList");
+                            products.forEach((product) => {
+                                // console.log(product);
+                                if (product.isClosed === true) {
+                                    return;
+                                }
+                                const listItem = document.createElement("li");
+                                const label = document.createElement("label");
+                                label.innerHTML = `
+                    <input type="checkbox" pquantity="${product.quantity}" pname="${product.name}" pprice="${product.price}" pdate="${product.date}" pisclosed="${product.isClosed}"  name="product" value="${product.name}">
+                    ${product.name} - ${product.price} TL
+                `;
+                                listItem.appendChild(label);
+                                productListElement.appendChild(listItem);
+                            });
+                        });
+                        masaListesiModal.appendChild(li);
+                    });
+                })
+                .catch((error) =>
+                    console.error("Veri çekilirken hata oluştu:", error)
+                );
+            function getSelectedProducts() {
+                const form = document.getElementById("productForm");
+                const selectedProducts = [];
+                const checkboxes = form.querySelectorAll(
+                    'input[name="product"]:checked'
+                );
+                checkboxes.forEach((checkbox) => {
+                    selectedProducts.push({
+                        name: checkbox.getAttribute("pname"),
+                        price: checkbox.getAttribute("pprice"),
+                        quantity: checkbox.getAttribute("pquantity"),
+                        date: checkbox.getAttribute("pdate"),
+                        isClosed: checkbox.getAttribute("pisclosed"),
+                    });
+                });
+                const apiUrl = `http://${window.location.host}/transverproducts`;
+
+                fetch(apiUrl, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        gonderenMasa: secilenMasaAdi,
+                        aliciMasa: aktarilacakMasaAdi,
+                        products: selectedProducts,
+                    }),
+                })
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error("API'ye gönderme başarısız oldu.");
+                        }
+                        return response.json();
+                    })
+                    .then((data) => {
+                        // console.log("API yanıtı:", data);
+                        // API'ye başarılı bir şekilde gönderildiğinde yapılacak işlemler burada
+
+                        if (data.message === "successfull") {
+                            setTimeout(function () {
+                                location.reload();
+                            }, 300);
+                            ///
+                        } else {
+                            alert("Sorun olustu, tekrar deneyiniz!!!");
+                        }
+                        // Seçilen ürünler listesini temizle
+                    })
+                    .catch((error) => {
+                        console.error("Hata oluştu:", error);
+                        alert("Sorun olustu, baglantinizi kontrol ediniz!!!");
+
+                        // Hata durumunda yapılacak işlemler burada
+                    });
+                // console.log(selectedProducts);
+            }
+        </script>
+    </body>
+</html>

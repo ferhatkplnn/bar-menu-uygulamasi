@@ -1,0 +1,42 @@
+extends layouts/layout.pug
+
+
+block content
+
+    .container.mt-2
+        .input-group.mb-3
+            span.pe-2  Kahve 
+            .form-check.form-switch
+                input#menuSwitcher.form-check-input(type='checkbox')
+                label.form-check-label
+            span Bar
+
+
+
+    .container.m-5
+        form(action="/menucontrol" method="POST")
+            #productInputs
+                .row.mb-3
+                    .col-sm
+                        label.form-label Ürün Resmi
+                    .col-sm-6
+                        label.form-label Ürün Adı
+                    .col-sm
+                        label.form-label Fiyatı
+                    .col-sm
+                        label.form-label Eski Fiyat
+                    .col-sm
+                        label.form-label Indirim Araligi
+                    .col-sm
+                        label.form-label
+            .row
+                .col
+                    button.btn.btn-warning.btn-add(type="button") Yeni Ürün Ekle
+                    button.btn.btn-success.btn-add(type="submit") Guncelle
+                    button#resetMenu.btn.btn-danger(type='button' onclick="setDefaultMenu()") Menuyu sifirla
+
+    script(src="js/script.js")
+    script.
+        getMenu(addMenuInputValue);
+        addAddButtonEvent();
+        initializeMenuSwitcher();

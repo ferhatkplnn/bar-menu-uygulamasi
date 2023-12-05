@@ -1,0 +1,35 @@
+{
+    "name": "menu-proje",
+    "version": "1.0.0",
+    "description": "menu proje",
+    "main": "index.js",
+    "engines": {
+        "node": "16.17.1"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js",
+        "devstart": "nodemon --ignore public/menu.json --ignore public/masalar.json --ignore public/defaultMenu.json index.js",
+        "serverstart": "DEBUG=menu-proje:* npm run devstart"
+    },
+    "ignore": [
+        "menu.json",
+        "masalar.json"
+    ],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.20.1",
+        "cookie-parser": "^1.4.6",
+        "express": "^4.18.2",
+        "express-async-handler": "^1.2.0",
+        "jsonwebtoken": "^9.0.0",
+        "multer": "^1.4.5-lts.1",
+        "pug": "^3.0.2"
+    },
+    "devDependencies": {
+        "dotenv": "^16.0.3",
+        "nodemon": "^2.0.20"
+    }
+}

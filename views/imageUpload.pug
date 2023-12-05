@@ -1,0 +1,15 @@
+extends layouts/layout.pug
+
+block content
+    div.text-center.container-fluid(style="min-height: 400px")
+        main.col-sm-6.col-md-4.col-12.m-auto.my-5
+            form(action="/upload" method="POST" enctype="multipart/form-data")
+                h1.h3.mb-5.fw-normal Resim Yukle
+                .input-group.mb-3
+                    input#imageUpload.form-control(type="file" name="profile_image")
+                button.w-100.btn.btn-lg.btn-primary(type="submit") Resim yukle
+            ul.list-group.mt-5
+                each imageFile in imageFiles
+                    li.list-group-item.d-flex.justify-content-between(id=imageFile)
+                        span= imageFile
+                        button.btn.btn-danger(type='button', onclick=`deleteFlight('${imageFile}')`) Sil

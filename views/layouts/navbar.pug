@@ -1,0 +1,21 @@
+// navbar
+nav.p-3.text-bg-dark
+    .container
+        .d-flex.flex-wrap.align-items-center.justify-content-center.justify-content-lg-start
+            ul.nav.col-12.col-lg-auto.me-lg-auto.mb-2.justify-content-center.mb-md-0
+                li
+                    a.nav-link.px-2.text-white(href="/") Menu
+                if userSession
+                    li
+                        a.nav-link.px-2.text-white(href="/menucontrol") Menu islemleri
+                    li
+                        a.nav-link.px-2.text-white(href="/upload") Resim islemleri
+                    li
+                        a.nav-link.px-2.text-white(href="/automenucontrol") Otomatik menu kontrol
+                    li
+                        a.nav-link.px-2.text-white(href="/desksadmin.html") Hesaplar
+
+            if !userSession
+            else
+                .text-end
+                    a.btn.btn-danger(type="button" href="/logout") Çıkış yap

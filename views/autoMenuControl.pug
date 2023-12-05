@@ -1,0 +1,66 @@
+extends layouts/layout.pug
+
+
+block content
+    .container.mt-5
+        form
+            .mb-3
+                label.form-label(for='sayiInput') Dakikayi girin:
+                input#sayiInput.form-control(type='number' value='5' required='')
+            button#baslatButton.btn.btn-primary(type='button')
+                | Baslat
+            button#durdurButton.btn.btn-secondary(type='button')
+                | Durdur
+    script.
+        document
+        .getElementById("baslatButton")
+        .addEventListener("click", function () {
+        var inputValue = document.getElementById("sayiInput").    value;
+        if(!inputValue){
+            return;
+        }
+        var url = `/start-random-product/${inputValue}`;
+        fetch(url)
+        .then(function (response) {
+        if (!response.ok) {
+        throw new Error("Network response was not ok");
+        }
+        return response.json();
+        })
+        .then(function (data) {
+            if(data.message === "successfull"){
+                alert("Otomatik fiyat degistirme baslatildi.")
+            }
+        })
+        .catch(function (error) {
+        console.error(
+        "There was a problem with the fetch operation:",
+        error
+        );
+        });
+        });
+
+        document
+        .getElementById("durdurButton")
+        .addEventListener("click", function () {
+        var url = `/stop-random-product`;
+        fetch(url)
+        .then(function (response) {
+        if (!response.ok) {
+        throw new Error("Network response was not ok");
+        }
+        return response.json();
+        })
+        .then(function (data) {
+            if(data.message === "successfull"){
+                alert("Otomatik fiyat degistirme durduruldu.")
+            }
+        })
+        .catch(function (error) {
+        console.error(
+        "There was a problem with the fetch operation:",
+        error
+        );
+        });
+        });
+

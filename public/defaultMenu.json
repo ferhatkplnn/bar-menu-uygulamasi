@@ -1,0 +1,542 @@
+{
+    "isBar": "false",
+    "kafeMenu": [
+        {
+            "imageName": "chivas.png",
+            "productName": "Double Viski",
+            "productPrice": "270",
+            "oldPrice": "250",
+            "indirim": "55",
+            "date": 1691671858333
+        },
+        {
+            "imageName": "absolute.png",
+            "productName": "Double Votka",
+            "productPrice": "170",
+            "oldPrice": "190",
+            "indirim": "30",
+            "date": 1690654488557
+        },
+        {
+            "imageName": "tekila.png",
+            "productName": "Tekila Shot",
+            "productPrice": "110",
+            "oldPrice": "100",
+            "indirim": "30",
+            "date": 1690660533517
+        },
+        {
+            "imageName": "gin_tonic.png",
+            "productName": "Gin Tonic",
+            "productPrice": "180",
+            "oldPrice": "190",
+            "indirim": "30",
+            "date": 1690570617981
+        },
+        {
+            "imageName": "jagger.png",
+            "productName": "Jagermeister",
+            "productPrice": "70",
+            "oldPrice": "120",
+            "indirim": "30",
+            "date": 1690654515803
+        },
+        {
+            "imageName": "tuborg.png",
+            "productName": "Tuborg",
+            "productPrice": "110",
+            "oldPrice": "90",
+            "indirim": "30",
+            "date": 1690657749492
+        },
+        {
+            "imageName": "efes-pilsener-beer-24x33cl.png",
+            "productName": "Efes Malt",
+            "productPrice": "70",
+            "oldPrice": "90",
+            "indirim": "30",
+            "date": 1690659358511
+        },
+        {
+            "imageName": "jagger.png",
+            "productName": "Lynchburg Lemonade",
+            "productPrice": "290",
+            "oldPrice": "290",
+            "indirim": "30",
+            "date": 1690660698338
+        },
+        {
+            "imageName": "absolute.png",
+            "productName": "Absolute Vodka 70 cL",
+            "productPrice": "2030",
+            "oldPrice": "2100",
+            "indirim": "30",
+            "date": 1690654722314
+        },
+        {
+            "imageName": "amf.png",
+            "productName": "AMF",
+            "productPrice": "330",
+            "oldPrice": "350",
+            "indirim": "30",
+            "date": 1690566903679
+        },
+        {
+            "imageName": "jack_70.png",
+            "productName": "Jack Daniels  70 cL ",
+            "productPrice": "1970",
+            "oldPrice": "2300",
+            "indirim": "30",
+            "date": 1690654722314
+        },
+        {
+            "imageName": "appletÄ±nÄ±.png",
+            "productName": "Appletini",
+            "productPrice": "190",
+            "oldPrice": "250",
+            "indirim": "30",
+            "date": 1690654488557
+        },
+        {
+            "imageName": "gordon70cl.png",
+            "productName": "Gordons 70 cL",
+            "productPrice": "2160",
+            "oldPrice": "2100",
+            "indirim": "30",
+            "date": 1690566903679
+        },
+        {
+            "imageName": "bluelagoon.png",
+            "productName": "Blue Lagoon",
+            "productPrice": "180",
+            "oldPrice": "190",
+            "indirim": "30",
+            "date": 1690654583165
+        },
+        {
+            "imageName": "olmeca.png",
+            "productName": "Olmeca 70 cL",
+            "productPrice": "1900",
+            "oldPrice": "2200",
+            "indirim": "30",
+            "date": 1690570617981
+        },
+        {
+            "imageName": "margarÄ±ta.png",
+            "productName": "Margarita",
+            "productPrice": "310",
+            "oldPrice": "250",
+            "indirim": "30",
+            "date": 1690654583165
+        },
+        {
+            "imageName": "beesknees.png",
+            "productName": "BeesKnees",
+            "productPrice": "230",
+            "oldPrice": "250",
+            "indirim": "30",
+            "date": 1690654488558
+        },
+        {
+            "imageName": "selected",
+            "productName": "Colorado Bulldog",
+            "productPrice": "260",
+            "oldPrice": "250",
+            "indirim": "30",
+            "date": 1690654583165
+        },
+        {
+            "imageName": "selected",
+            "productName": "Lucien Gaudin",
+            "productPrice": "240",
+            "oldPrice": "280",
+            "indirim": "30",
+            "date": 1690654488558
+        },
+        {
+            "imageName": "selected",
+            "productName": "Negroni",
+            "productPrice": "170",
+            "oldPrice": "200",
+            "indirim": "30",
+            "date": 1690654583165
+        },
+        {
+            "imageName": "selected",
+            "productName": "Jungle Bird",
+            "productPrice": "230",
+            "oldPrice": "250",
+            "indirim": "30",
+            "date": 1690654583165
+        },
+        {
+            "imageName": "selected",
+            "productName": "BMW",
+            "productPrice": "280",
+            "oldPrice": "300",
+            "indirim": "30",
+            "date": 1690309991490
+        },
+        {
+            "imageName": "selected",
+            "productName": "John Collins",
+            "productPrice": "230",
+            "oldPrice": "250",
+            "indirim": "30",
+            "date": 1690654583165
+        },
+        {
+            "imageName": "selected",
+            "productName": "Chivas12 70 cL",
+            "productPrice": "2110",
+            "oldPrice": "2400",
+            "indirim": "30",
+            "date": 1691064921537
+        }
+    ],
+    "barMenu": [
+        {
+            "imageName": "image.png",
+            "productName": "Jager boom",
+            "productPrice": "250",
+            "oldPrice": "250",
+            "date": 1690287855079
+        },
+        {
+            "imageName": "selected",
+            "productName": "Becks",
+            "productPrice": "90",
+            "oldPrice": "90",
+            "date": 1690347794717
+        },
+        {
+            "imageName": "selected",
+            "productName": "Corona",
+            "productPrice": "120",
+            "oldPrice": "120",
+            "date": 1690288560630
+        },
+        {
+            "imageName": "selected",
+            "productName": "Efes Ozel Seri",
+            "productPrice": "90",
+            "oldPrice": "90",
+            "date": 1690288560630
+        },
+        {
+            "imageName": "selected",
+            "productName": "Tuborg Filtresiz",
+            "productPrice": "90",
+            "oldPrice": "90",
+            "date": 1690288560630
+        },
+        {
+            "imageName": "selected",
+            "productName": "Bomonti Filtresiz",
+            "productPrice": "90",
+            "oldPrice": "90",
+            "date": 1690288560630
+        },
+        {
+            "imageName": "selected",
+            "productName": "Beefeater 70cl",
+            "productPrice": "2100",
+            "oldPrice": "2100",
+            "date": 1690288560630
+        },
+        {
+            "imageName": "selected",
+            "productName": "Gordon Premium Pink 70cl",
+            "productPrice": "2200",
+            "oldPrice": "2200",
+            "date": 1690289712672
+        },
+        {
+            "imageName": "selected",
+            "productName": "Bombay 70cl",
+            "productPrice": "2500",
+            "oldPrice": "2500",
+            "date": 1690289712672
+        },
+        {
+            "imageName": "selected",
+            "productName": "Hendicks 70cl",
+            "productPrice": "3000",
+            "oldPrice": "3000",
+            "date": 1690347794717
+        },
+        {
+            "imageName": "selected",
+            "productName": "Dimple Golden S. 70cl",
+            "productPrice": "2100",
+            "oldPrice": "2100",
+            "date": 1690349511342
+        },
+        {
+            "imageName": "selected",
+            "productName": "Jack Daniels T.H 70cl",
+            "productPrice": "2300",
+            "oldPrice": "2300",
+            "date": 1690349417518
+        },
+        {
+            "imageName": "selected",
+            "productName": "Grey Goose 70cl",
+            "productPrice": "3500",
+            "oldPrice": "3500",
+            "date": 1690289939104
+        },
+        {
+            "imageName": "selected",
+            "productName": "Patron Silver 70cl",
+            "productPrice": "4500",
+            "oldPrice": "4500",
+            "date": 1690290559124
+        },
+        {
+            "imageName": "selected",
+            "productName": "Bacardi 70cl",
+            "productPrice": "2000",
+            "oldPrice": "2000",
+            "date": 1690290559124
+        },
+        {
+            "imageName": "selected",
+            "productName": "Havana Club 70cl",
+            "productPrice": "2000",
+            "oldPrice": "2000",
+            "date": 1690290559124
+        },
+        {
+            "imageName": "selected",
+            "productName": "Beyaz Sarap Kadeh",
+            "productPrice": "150",
+            "oldPrice": "150",
+            "date": 1690290643243
+        },
+        {
+            "imageName": "selected",
+            "productName": "Kirmizi Sarap Kadeh",
+            "productPrice": "150",
+            "oldPrice": "150",
+            "date": 1690290643243
+        },
+        {
+            "imageName": "selected",
+            "productName": "Rose Sarap Kadeh",
+            "productPrice": "170",
+            "oldPrice": "170",
+            "date": 1690290643243
+        },
+        {
+            "imageName": "selected",
+            "productName": "Safari Shot",
+            "productPrice": "100",
+            "oldPrice": "100",
+            "date": 1690290989121
+        },
+        {
+            "imageName": "selected",
+            "productName": "Baileys Shot",
+            "productPrice": "100",
+            "oldPrice": "100",
+            "date": 1690347794717
+        },
+        {
+            "imageName": "selected",
+            "productName": "Sheridans Shot",
+            "productPrice": "100",
+            "oldPrice": "100",
+            "date": 1690347794717
+        },
+        {
+            "imageName": "selected",
+            "productName": "Malibu Shot",
+            "productPrice": "100",
+            "oldPrice": "100",
+            "date": 1690290989121
+        },
+        {
+            "imageName": "selected",
+            "productName": "Kahlua Shot",
+            "productPrice": "100",
+            "oldPrice": "100",
+            "date": 1690290989121
+        },
+        {
+            "imageName": "selected",
+            "productName": "Yer Volkani",
+            "productPrice": "150",
+            "oldPrice": "150",
+            "date": 1690291056231
+        },
+        {
+            "imageName": "selected",
+            "productName": "Cola",
+            "productPrice": "60",
+            "oldPrice": "60",
+            "date": 1690291056231
+        },
+        {
+            "imageName": "selected",
+            "productName": "Fanta",
+            "productPrice": "60",
+            "oldPrice": "60",
+            "date": 1690291056231
+        },
+        {
+            "imageName": "selected",
+            "productName": "Sprite",
+            "productPrice": "60",
+            "oldPrice": "60",
+            "date": 1690291056231
+        },
+        {
+            "imageName": "selected",
+            "productName": "Fuse Tea seftali",
+            "productPrice": "60",
+            "oldPrice": "60",
+            "date": 1690291056231
+        },
+        {
+            "imageName": "selected",
+            "productName": "Fuse Tea mango",
+            "productPrice": "60",
+            "oldPrice": "60",
+            "date": 1690291230761
+        },
+        {
+            "imageName": "selected",
+            "productName": "Sade Soda",
+            "productPrice": "30",
+            "oldPrice": "30",
+            "date": 1690291230761
+        },
+        {
+            "imageName": "selected",
+            "productName": "Meyveli Soda",
+            "productPrice": "30",
+            "oldPrice": "30",
+            "date": 1690291230761
+        },
+        {
+            "imageName": "selected",
+            "productName": "Meyve Suyu",
+            "productPrice": "30",
+            "oldPrice": "30",
+            "date": 1690291230761
+        },
+        {
+            "imageName": "selected",
+            "productName": "Alkolsuz Kokteyl",
+            "productPrice": "130",
+            "oldPrice": "130",
+            "date": 1690291230761
+        },
+        {
+            "imageName": "selected",
+            "productName": "Ikram Shot ",
+            "productPrice": "0",
+            "oldPrice": "0",
+            "date": 1690347794717
+        },
+        {
+            "imageName": "selected",
+            "productName": "Su",
+            "productPrice": "10",
+            "oldPrice": "10",
+            "date": 1690307259724
+        },
+        {
+            "imageName": "selected",
+            "productName": "Enerji",
+            "productPrice": "60",
+            "oldPrice": "60",
+            "date": 1690389907785
+        },
+        {
+            "imageName": "selected",
+            "productName": "Cerez",
+            "productPrice": "50",
+            "oldPrice": "50",
+            "date": 1690347794717
+        },
+        {
+            "imageName": "selected",
+            "productName": "Meyve tabagi",
+            "productPrice": "80",
+            "oldPrice": "80",
+            "date": 1690307932405
+        },
+        {
+            "imageName": "selected",
+            "productName": "nescafe",
+            "productPrice": "40",
+            "oldPrice": "40",
+            "date": 1690474262340
+        },
+        {
+            "imageName": "selected",
+            "productName": "Chivas12 35cl",
+            "productPrice": "1400",
+            "oldPrice": "1400",
+            "date": 1690474388400
+        },
+        {
+            "imageName": "selected",
+            "productName": "Jack Daniels 35cl",
+            "productPrice": "1300",
+            "oldPrice": "1300",
+            "date": 1690474388400
+        },
+        {
+            "imageName": "selected",
+            "productName": "Black Label 35cl",
+            "productPrice": "1400",
+            "oldPrice": "1400",
+            "date": 1690474388400
+        },
+        {
+            "imageName": "selected",
+            "productName": "Gordon 35cl",
+            "productPrice": "1100",
+            "oldPrice": "1100",
+            "date": 1690474388400
+        },
+        {
+            "imageName": "selected",
+            "productName": "Absolut 35cl",
+            "productPrice": "1100",
+            "oldPrice": "1100",
+            "date": 1690474388400
+        },
+        {
+            "imageName": "selected",
+            "productName": "Beefeater 35cl",
+            "productPrice": "1100",
+            "oldPrice": "1100",
+            "date": 1690474388400
+        },
+        {
+            "imageName": "selected",
+            "productName": "Olmeca 35cl",
+            "productPrice": "1200",
+            "oldPrice": "1200",
+            "date": 1690474388400
+        },
+        {
+            "imageName": "selected",
+            "productName": "Olmeca 50cl",
+            "productPrice": "1600",
+            "oldPrice": "1600",
+            "date": 1690474388400
+        },
+        {
+            "imageName": "",
+            "productName": "Carlsberg",
+            "productPrice": "90",
+            "oldPrice": "90",
+            "date": 1690559281281
+        }
+    ]
+}
