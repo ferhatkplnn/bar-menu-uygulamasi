@@ -20,7 +20,7 @@ Bu projenin amacı, bir barın içeriğini etkili bir şekilde yönetmek ve fiya
 
 - Node.js
 - Pug
-- [Diğer Kullanılan Teknolojiler]
+
 
 ## Kurulum
 
